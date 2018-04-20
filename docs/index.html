@@ -12,20 +12,38 @@
     <meta name="theme-color" content="#FF0000">
 </head>
 
-<body class="checkered">
-    <div id="wrap" class="wrap">
-        <input type="text" id="colorInput" class="color-input" placeholder="red or #FFC107">
-        <p id="result" class="info invisible">
-            Computed as <var id="computed"></var><br>
-            Contrast ratio is <var id="ratio" class="var--imp"></var><br>
-            Use <var id="lod" class="var--imp"></var> foreground text
-        </p>
-        <p id="error" class="info">Please type a valid color</p>
-        <!-- <p>Computed as <var></var></p> -->
-        <!-- <p id="result">You should use a light contrast color</p> -->
-    
-        <script type="module" src="/scripts/main.js"></script>
+<body class="checkered body--dark">
+    <input type="text" id="colorInput" class="color-input" placeholder="red or #FFC107">
+    <p id="result" class="info invisible">
+        Computed as
+        <var id="computed"></var>
+        <br> Contrast ratio is
+        <var id="ratio" class="var--imp"></var>
+        <br> Use a
+        <var id="lod" class="var--imp"></var> foreground color
+    </p>
+    <p id="error" class="info">Please type a valid color</p>
+
+    <div id="optionsBar" class="optionsbar">
+        <!-- <span>
+            <button data-on>AA</button>
+            <button>AAA</button>
+        </span>
+        <span>
+            <button>Normal</button>
+            <button data-on>Large</button>
+        </span> -->
+        <!-- <button data-contrast="AA_NORMAL">AA Normal</button>
+        <button data-contrast="AA_LARGE" data-on>AA Large</button>
+        <button data-contrast="AAA_NORMAL">AAA Normal</button>
+        <button data-contrast="AAA_LARGE">AAA Large</button> -->
+        <button data-contrast="AA_NORMAL">AA S</button>
+        <button data-contrast="AA_LARGE" data-on>AA L</button>
+        <button data-contrast="AAA_NORMAL">AAA S</button>
+        <button data-contrast="AAA_LARGE">AAA L</button>
     </div>
+
+    <script type="module" src="/scripts/main.js"></script>
 </body>
 
 </html>
