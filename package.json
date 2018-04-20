@@ -1,0 +1,39 @@
+{
+    "name": "colorlod",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [],
+    "author": "HWALab",
+    "license": "MIT",
+    "eslintConfig": {
+        "env": {
+            "browser": true,
+            "es6": true
+        },
+        "extends": "eslint:all",
+        "parserOptions": {
+            "sourceType": "module"
+        },
+        "rules": {
+            "arrow-parens": ["error", "as-needed"],
+            "capitalized-comments": ["error", "always", { "ignoreConsecutiveComments": true }],
+            "curly": ["error", "multi-line"],
+            "func-style": "off",
+            "linebreak-style": ["error", "windows"],
+            "max-len": ["error", 120],
+            "multiline-comment-style": "off",
+            "multiline-ternary": ["error", "always-multiline"],
+            "no-magic-numbers": ["error", { "ignore": [0, 1, 2] }],
+            "no-ternary": "off",
+            "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }],
+            "one-var": "off",
+            "quote-props": ["error", "as-needed"],
+            "object-property-newline": ["error", { "allowAllPropertiesOnSameLine": true }],
+            "padded-blocks": "off",
+            "space-before-function-paren": "off",
+            "wrap-regex": "off",
+            "sort-keys": "off"
+
+        }
+    }
+}
