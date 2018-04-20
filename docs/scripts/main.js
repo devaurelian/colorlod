@@ -7,10 +7,17 @@
 
 import * as utils from "/scripts/utils.js";
 
+const [computedElem, ratioElem, lodElem] = document.querySelectorAll("#computed, #ratio, #lod");
+
 const wrapEl = document.getElementById("wrap");
 const colorInputEl = document.getElementById("colorInput");
-const resultEl = document.getElementById("result");
-console.log(colorInputEl);
+const resultEl = document.getElementById("result"),
+    errorEl = document.getElementById("error");
+
+
+const curWCAGContrast = utils.contrastRatios.AA_LARGE;
+
+console.log(computedElem);
 
 function setTransparent() {
     wrapEl.style.backgroundColor = "transparent";
@@ -28,16 +35,26 @@ colorInputEl.addEventListener("input", event => {
     console.log("Computed RGB", compRGB);
 
     if (compRGB) {
-        const contrast = utils.getContrastForColor(compRGB);
-        // const useLight = utils.shouldUseLightForegroundOnBackground(compRGB);
-        const useLight = contrast >= 3;
+        // Calculate the contrast between the current color and white
+        let contrast = utils.getContrastRatio(compRGB, utils.whiteRGB);
 
+        // Check whether a light or a dark contrast color should be used
+        const useLight = contrast >= curWCAGContrast;
+
+        // Update the text color with the light (white) or dark (black) color
         wrapEl.style.color = useLight ? "white" : "black";
 
-        resultEl.innerText = `Computed color is ${compColorString}.\nContrast with white is ${contrast}.
-        You should use a ${useLight ? "light" : "dark"} contrast color`;
+        // If a darker foreground color should be used, update the contrast with black
+        if (!useLight) contrast = utils.getContrastRatio(compRGB, utils.blackRGB);
+
+        // Update the computed, contrast, and lod information
+        computedElem.textContent = compColorString;
+        ratioElem.textContent = `${contrast.toFixed(2)}:1`;
+        lodElem.textContent = useLight ? "light" : "dark";
     } else {
         setTransparent();
-        resultEl.innerText = "Invalid";
     }
+
+    resultEl.classList.toggle("invisible", !compRGB);
+    errorEl.classList.toggle("invisible", compRGB);
 });

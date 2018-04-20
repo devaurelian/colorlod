@@ -8,25 +8,43 @@ html, body {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* background-color: #FF0000; */
-    background-color: #45FF23;
+    background-color: #fff;
+    color: #212529;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
     margin: 0;
-    padding: 0;
+    text-align: left;
+}
 
+input {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0;
+}
 
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+var {
+    font-style: normal;
 }
 
 .wrap {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
     height: 100%;
-    align-items: center;
+    padding-top: 19vh;
+    /* align-items: center; */
+    text-align: center;
 }
 
 .checkered {
-    /* height: 240px; */
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392) 0), linear-gradient(45deg, rgba(0, 0, 0, 0.0980392) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.0980392) 75%, rgba(0, 0, 0, 0.0980392) 0), white;
     background-repeat: repeat, repeat;
     background-position: 0px 0, 5px 5px;
@@ -41,17 +59,33 @@ body {
 }
 
 .color-input {
-    font-family: inherit;
     font-size: 2rem;
     background: transparent;
     color: inherit;
-    /* border: 1px solid; */
     border: none;
     border-bottom: 1px solid;
     text-align: center;
     padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    max-width: 30rem;
+    width: 80%;
 }
 
 .color-input:focus {
     outline: none;
+}
+
+@media (min-width: 992px) {
+    .info {
+        font-size: 1.5rem;
+    }
+}
+  
+.invisible {
+    display: none;
+}
+
+.var--imp {
+    font-style: normal;
+    font-weight: bold;
 }

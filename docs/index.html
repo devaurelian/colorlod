@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Colorlod</title>
 
+    <link rel="stylesheet" href="/styles/normalize.css">
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/appicon/app-icon-180.png">
     <meta name="theme-color" content="#FF0000">
@@ -13,8 +14,15 @@
 
 <body class="checkered">
     <div id="wrap" class="wrap">
-        <input type="text" id="colorInput" class="color-input">
-        <p id="result">You should use a light contrast color</p>
+        <input type="text" id="colorInput" class="color-input" placeholder="red or #FFC107">
+        <p id="result" class="info invisible">
+            Computed as <var id="computed"></var><br>
+            Contrast ratio is <var id="ratio" class="var--imp"></var><br>
+            Use <var id="lod" class="var--imp"></var> foreground text
+        </p>
+        <p id="error" class="info">Please type a valid color</p>
+        <!-- <p>Computed as <var></var></p> -->
+        <!-- <p id="result">You should use a light contrast color</p> -->
     
         <script type="module" src="/scripts/main.js"></script>
     </div>
